@@ -8,12 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <h1 class="logo">CSS Wiki</h1>
-    </aside>
-
-    <main class="content">
+  <main class="content">
       <header class="page-header" id="home">
         <div class="page-header__top">
           <div class="page-header__text">
@@ -34,9 +29,7 @@
               placeholder="Искать по свойствам: display, flex, grid..."
               aria-label="Поиск по справочнику CSS"
             />
-          </div>
-          <div class="search__actions">
-            <button type="submit" class="search__button">Найти</button>
+            <button type="submit" class="search__button search__button_inline">Найти</button>
           </div>
           <div class="search__links">
             <span class="search__hint">Быстрые переходы:</span>
@@ -105,8 +98,7 @@
         </p>
       </section>
     </main>
-  </div>
-</body>
+  </body>
 <script>
   (function () {
     const form = document.getElementById("search-form");
