@@ -4,27 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CSS Wiki</title>
+  <link rel="icon" type="image/png" href="img/css.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="layout">
     <aside class="sidebar">
       <h1 class="logo">CSS Wiki</h1>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#display">display</a></li>
-          <li><a href="#position">position</a></li>
-          <li><a href="#flex">flex</a></li>
-          <li><a href="#grid">grid</a></li>
-          <li><a href="#margin">margin</a></li>
-        </ul>
-      </nav>
     </aside>
 
     <main class="content">
-      <header class="page-header">
-        <h2>Справочник по основным CSS-свойствам layout'а</h2>
-        <p>Краткие объяснения и примеры значений для ключевых свойств.</p>
+      <header class="page-header" id="home">
+        <div class="page-header__top">
+          <div class="page-header__text">
+            <h2>CSS Wiki</h2>
+            <p>Мини-справочник по основным CSS-свойствам для построения макета.</p>
+          </div>
+          <a class="home-icon" href="#home" aria-label="На главный экран">
+            <img src="img/css.png" alt="CSS Wiki логотип" />
+          </a>
+        </div>
+
+        <form class="search" id="search-form">
+          <div class="search__field">
+            <input
+              type="search"
+              class="search__input"
+              id="search-input"
+              placeholder="Искать по свойствам: display, flex, grid..."
+              aria-label="Поиск по справочнику CSS"
+            />
+          </div>
+          <div class="search__actions">
+            <button type="submit" class="search__button">Найти</button>
+          </div>
+          <div class="search__links">
+            <span class="search__hint">Быстрые переходы:</span>
+            <a href="#display" class="search__chip">display</a>
+            <a href="#position" class="search__chip">position</a>
+            <a href="#flex" class="search__chip">flex</a>
+            <a href="#grid" class="search__chip">grid</a>
+            <a href="#margin" class="search__chip">margin</a>
+          </div>
+        </form>
       </header>
 
       <section id="display" class="card">
@@ -85,4 +107,52 @@
     </main>
   </div>
 </body>
+<script>
+  (function () {
+    const form = document.getElementById("search-form");
+    const input = document.getElementById("search-input");
+    const luckyButton = document.getElementById("lucky-button");
+
+    if (!form || !input) return;
+
+    const sections = ["display", "position", "flex", "grid", "margin"];
+
+    function scrollToId(id) {
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const raw = (input.value || "").trim().toLowerCase();
+
+      if (!raw) {
+        scrollToId("home");
+        return;
+      }
+
+      if (sections.includes(raw)) {
+        scrollToId(raw);
+        return;
+      }
+
+      const matched = sections.find((id) => raw.includes(id));
+      if (matched) {
+        scrollToId(matched);
+        return;
+      }
+
+      scrollToId("home");
+    });
+
+    if (luckyButton) {
+      luckyButton.addEventListener("click", function () {
+        const randomId = sections[Math.floor(Math.random() * sections.length)];
+        scrollToId(randomId);
+      });
+    }
+  })();
+</script>
 </html>
