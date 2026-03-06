@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,98 +8,96 @@
   <link rel="icon" type="image/png" href="img/css.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <main class="content">
-      <header class="page-header" id="home">
-        <div class="page-header__top">
-          <div class="page-header__text">
-            <h2>CSS Wiki</h2>
-            <p>Мини-справочник по основным CSS-свойствам для построения макета.</p>
-          </div>
-          <a class="home-icon" href="#home" aria-label="На главный экран">
-            <img src="img/css.png" alt="CSS Wiki логотип" />
-          </a>
+    <header class="page-header" id="home">
+      <div class="page-header__top">
+        <div class="page-header__text">
+          <h2>CSS Wiki!</h2>
+          <p>Мини-справочник по основным CSS-свойствам для построения макета.</p>
         </div>
+        <a class="home-icon" href="#home" aria-label="На главный экран">
+          <img src="img/css.png" alt="CSS Wiki логотип" />
+        </a>
+      </div>
 
-        <form class="search" id="search-form">
-          <div class="search__field">
-            <input
-              type="search"
-              class="search__input"
-              id="search-input"
-              placeholder="Искать по свойствам: display, flex, grid..."
-              aria-label="Поиск по справочнику CSS"
-            />
-            <button type="submit" class="search__button search__button_inline">Найти</button>
-          </div>
-          <div class="search__links">
-            <span class="search__hint">Быстрые переходы:</span>
-            <a href="#display" class="search__chip">display</a>
-            <a href="#position" class="search__chip">position</a>
-            <a href="#flex" class="search__chip">flex</a>
-            <a href="#grid" class="search__chip">grid</a>
-            <a href="#margin" class="search__chip">margin</a>
-          </div>
-        </form>
-      </header>
+      <form class="search" id="search-form">
+        <div class="search__field">
+          <input type="search" class="search__input" id="search-input"
+            placeholder="Искать по свойствам: display, flex, grid..." aria-label="Поиск по справочнику CSS" />
+          <button type="submit" class="search__button search__button_inline">Найти</button>
+        </div>
+        <div class="search__links">
+          <span class="search__hint">Быстрые переходы:</span>
+          <a href="#display" class="search__chip">display</a>
+          <a href="#position" class="search__chip">position</a>
+          <a href="#flex" class="search__chip">flex</a>
+          <a href="#grid" class="search__chip">grid</a>
+          <a href="#margin" class="search__chip">margin</a>
+        </div>
+      </form>
+    </header>
 
-      <section id="display" class="card">
-        <h3 class="card__title">display</h3>
-        <p class="card__description">
-          Свойство <code>display</code> определяет тип форматирования элемента и то, как он участвует в потоке документа.
-        </p>
-        <p class="card__example">
-          <strong>Примеры значений:</strong>
-          <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, <code>grid</code>.
-        </p>
-      </section>
+    <section id="display" class="card">
+      <h3 class="card__title">display</h3>
+      <p class="card__description">
+        Свойство <code>display</code> определяет тип форматирования элемента и то, как он участвует в потоке документа.
+      </p>
+      <p class="card__example">
+        <strong>Примеры значений:</strong>
+        <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, <code>grid</code>.
+      </p>
+    </section>
 
-      <section id="position" class="card">
-        <h3 class="card__title">position</h3>
-        <p class="card__description">
-          Свойство <code>position</code> задаёт способ позиционирования элемента и от чего будут считаться координаты.
-        </p>
-        <p class="card__example">
-          <strong>Примеры значений:</strong>
-          <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.
-        </p>
-      </section>
+    <section id="position" class="card">
+      <h3 class="card__title">position</h3>
+      <p class="card__description">
+        Свойство <code>position</code> задаёт способ позиционирования элемента и от чего будут считаться координаты.
+      </p>
+      <p class="card__example">
+        <strong>Примеры значений:</strong>
+        <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, <code>sticky</code>.
+      </p>
+    </section>
 
-      <section id="flex" class="card">
-        <h3 class="card__title">flex</h3>
-        <p class="card__description">
-          Свойство <code>flex</code> — это сокращение для <code>flex-grow</code>, <code>flex-shrink</code> и <code>flex-basis</code> и управляет размером
-          flex-элементов внутри flex-контейнера.
-        </p>
-        <p class="card__example">
-          <strong>Примеры значений:</strong>
-          <code>1</code>, <code>0 1 auto</code>, <code>2 0 200px</code>.
-        </p>
-      </section>
+    <section id="flex" class="card">
+      <h3 class="card__title">flex</h3>
+      <p class="card__description">
+        Свойство <code>flex</code> — это сокращение для <code>flex-grow</code>, <code>flex-shrink</code> и
+        <code>flex-basis</code> и управляет размером
+        flex-элементов внутри flex-контейнера.
+      </p>
+      <p class="card__example">
+        <strong>Примеры значений:</strong>
+        <code>1</code>, <code>0 1 auto</code>, <code>2 0 200px</code>.
+      </p>
+    </section>
 
-      <section id="grid" class="card">
-        <h3 class="card__title">grid</h3>
-        <p class="card__description">
-          Свойство <code>grid</code> — шорткат для настройки рядов и колонок CSS Grid-контейнера, объединяющий несколько grid-свойств.
-        </p>
-        <p class="card__example">
-          <strong>Примеры значений:</strong>
-          <code>auto / auto</code>, <code>100px 100px / 1fr 2fr</code>, комбинации с <code>repeat()</code>.
-        </p>
-      </section>
+    <section id="grid" class="card">
+      <h3 class="card__title">grid</h3>
+      <p class="card__description">
+        Свойство <code>grid</code> — шорткат для настройки рядов и колонок CSS Grid-контейнера, объединяющий несколько
+        grid-свойств.
+      </p>
+      <p class="card__example">
+        <strong>Примеры значений:</strong>
+        <code>auto / auto</code>, <code>100px 100px / 1fr 2fr</code>, комбинации с <code>repeat()</code>.
+      </p>
+    </section>
 
-      <section id="margin" class="card">
-        <h3 class="card__title">margin</h3>
-        <p class="card__description">
-          Свойство <code>margin</code> задаёт внешние отступы вокруг элемента и влияет на расстояние между блоками.
-        </p>
-        <p class="card__example">
-          <strong>Примеры значений:</strong>
-          <code>0</code>, <code>16px</code>, <code>10px 20px</code>, <code>auto</code>.
-        </p>
-      </section>
-    </main>
-  </body>
+    <section id="margin" class="card">
+      <h3 class="card__title">margin</h3>
+      <p class="card__description">
+        Свойство <code>margin</code> задаёт внешние отступы вокруг элемента и влияет на расстояние между блоками.
+      </p>
+      <p class="card__example">
+        <strong>Примеры значений:</strong>
+        <code>0</code>, <code>16px</code>, <code>10px 20px</code>, <code>auto</code>.
+      </p>
+    </section>
+  </main>
+</body>
 <script>
   (function () {
     const form = document.getElementById("search-form");
@@ -147,4 +146,5 @@
     }
   })();
 </script>
+
 </html>
